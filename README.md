@@ -20,4 +20,4 @@ Substitute `cat` with any other file-manipulation stuff to your pleasure.
 
 ## Other features coming Soon&trade;
 
-*As root*: activate an environment: `. venv/bin/activate`.
+

@@ -1,0 +1,22 @@
+services:
+  iptraf:
+    build:
+      context: containers/iptraf
+    image: fsufitch/landash-iptraf
+    privileged: true 
+    network_mode: host
+    environment:
+      - IPTRAF_OUT=/var/iptraf-output/fifo
+    volumes:
+      - iptraf-output:/var/iptraf-output:rw
+
+  aggregator:
+    image: ubuntu:latest
+    command: "sleep infinity"
+    environment:
+      - IPTRAF_OUT=/var/iptraf-output/fifo
+    volumes:
+      - iptraf-output:/var/iptraf-output:rw
+
+volumes:
+  iptraf-output: {}  
